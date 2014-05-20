@@ -1,0 +1,43 @@
+<idea-plugin version="2">
+  <id>com.gametravel.builder</id>
+  <name>libGDX Assets Builder</name>
+  <version>1.0</version>
+  <vendor email="danielchow0424@gmail.com" url="http://www.yourcompany.com">GameTravel</vendor>
+
+  <description>Automatically generates Assets.java for libGDX projects</description>
+
+  <change-notes><![CDATA[
+      First Version.<br>
+      ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="107.105"/>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="gametravel_build_assets" class="com.gametravel.assetsbuilder.ActionBuildAssets"
+              text="Build libGDX Assets" description="Automatically generate Assets.java for libGDX projects">
+          <add-to-group group-id="MainMenu" anchor="last"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt 1"/>
+      </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+</idea-plugin>

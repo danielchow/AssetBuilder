@@ -147,7 +147,7 @@ public class DefaultFieldWriter implements FieldWriter {
                     builder.append("    // ").append(assets.get(i).classType.getSimpleName()).append("\n");
                     appendComment = true;
                 }
-                builder.append("	public ").append(asset.classType.getSimpleName())
+                builder.append("    public ").append(asset.classType.getSimpleName())
                         .append(" ").append(getFieldName(asset, options)).append(";\n");
             }
         }

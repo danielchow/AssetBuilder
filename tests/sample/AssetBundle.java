@@ -143,10 +143,6 @@ public class AssetBundle implements Disposable {
     public TextureRegion region_factoryp4;
     public TextureRegion region_factoryheavydamage1;
     public TextureRegion region__;
-    public TextureRegion region__;
-    public TextureRegion region__;
-    public TextureRegion region__;
-    public TextureRegion region__;
     public TextureRegion region_debrissmall;
     public TextureRegion region_bomberoutline;
     public TextureRegion region_upgradeoutline;

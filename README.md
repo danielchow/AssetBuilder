@@ -85,13 +85,20 @@ public class AssetBuilderTest extends ApplicationAdapter {
 Current Status
 ============
 
-Currently the library supports automatic loading/dispose of `Shader/SpineBinary/SpineJson/BitmapFont/Music/ParticleEffect/Sound/Texture/TextureAtlas` assets. `Model/Pixmap/Skin` are not yet supported.
+Currently the library supports automatic loading/dispose of `Shader/SpineBinary/SpineJson/BitmapFont/Music/ParticleEffect/Sound/Texture/TextureAtlas` assets. `Model/Pixmap/Skin` are not yet supported because I wasn't using these asset type when creating this tool. 
+
+I created this tool mainly to avoid typing the same boring asset loading/disposing code for every `libGDX` project, especially those protype projects whose assets changed a lot. You might don't wanna load all assets at once in a large project, which is not yet supported by this tool, but you can fork and modify the tool, for example, you can put the assets loaded in `menu` screen in folder `asset_pack_menu` and `game level pack1` assets in folder `asset_pack_level_pack1` then udpated the code to handle this and generate `AssetBundleMenu.java` and `AssetBundleLevelPack1.java`, so you can load/dispose them separately.
+
+Note that the code especially those generates `AssetBundle` code is quite hard-coded because I wanted to finish the tool ASAP.
+
+And the following are what AssetBuilder does for each kind of assets:
+
 
 For `Shader`, it generates field for `ShaderProgram`;
 
 For `SpineBinaray` and `SpineJson`, it generates field for `SkeletonData` and `AnimationStateData`, you can modfify the code to generate more fields, like `com.esotericsoftware.spine.Animation`;
 
-For `BitmapFont`, `Music`, `Sound`, `ParticleEffect`, `Texture`, it will generate corresponding fields;
+For `BitmapFont`, `Music`, `Sound`, `ParticleEffect`, `Texture`, it will generate corresponding fields, note that the tool defaultly distinguish `Music` and `Sound` by duration of audio assets, if duration is less than 5 seconds, the asset is classified as `Sound`, otherwise `Music`, and the library didn't resolve duration well when you use custom extension for audio files (Too lazy to fix this XD);
 
 For `TextureAtlas`, it will generate `TextureAtlas` field and a lot of `TextureRegion` fields. It also avoids generating `TextureRegion` fields of those for other assets, e.g., if it found a `TextureRegion` **goblin_arm** is used for a `SpineJson` asset, then the **goblin_arm** field will not be generated.
 
@@ -99,7 +106,7 @@ For `TextureAtlas`, it will generate `TextureAtlas` field and a lot of `TextureR
 License
 ============
 
-    Copyright 2014 Daniel Chow
+    Copyright 2014 Daniel Chow (zhouhang283295087@gmail.com)
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

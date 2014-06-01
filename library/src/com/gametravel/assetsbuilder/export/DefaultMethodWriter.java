@@ -234,7 +234,7 @@ public class DefaultMethodWriter implements MethodWriter {
         if (assets == null || assets.size == 0) return;
         for (int i = 0; i < assets.size; i++) {
             T asset = assets.get(i);
-            if (asset.isTagged()) return;
+            if (asset.isTagged()) continue;
             String fieldName = DefaultFieldWriter.getFieldName(asset, options);
             String path = asset.path;
             Class clz = asset.classType;

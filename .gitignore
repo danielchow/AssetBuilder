@@ -5,3 +5,6 @@
 
 bin/
 out/
+.idea/
+*.iml
+

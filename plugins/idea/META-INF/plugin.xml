@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>com.gametravel.builder</id>
   <name>libGDX Assets Builder</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <vendor email="danielchow0424@gmail.com" url="http://www.yourcompany.com">GameTravel</vendor>
 
   <description>Automatically generates Assets.java for libGDX projects</description>
